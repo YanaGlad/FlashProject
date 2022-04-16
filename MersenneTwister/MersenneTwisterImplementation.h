@@ -4,38 +4,41 @@
 
 #ifndef MERSENNETWISTERCLASS_MERSENNETWISTERIMPLEMENTATION_H
 #define MERSENNETWISTERCLASS_MERSENNETWISTERIMPLEMENTATION_H
+
 #include <random>
 #include <exception>
 #include <vector>
 
-struct IncompatibleException : std::exception
-{
-    const char * what () const throw ()
-    {
+struct IncompatibleException : std::exception {
+    const char *what() const throw() {
         return "Incompatible type. Available types: int, long, uint16_t, uint32_t, uint_64_t.";
     }
 };
 
-struct ValueException : std::exception
-{
-    const char * what () const throw ()
-    {
+struct ValueException : std::exception {
+    const char *what() const throw() {
         return "Minimum value should be lower than maximum value.";
     }
 };
 
-struct SeedException : std::exception
-{
-    const char * what () const throw ()
-    {
+struct SeedException : std::exception {
+    const char *what() const throw() {
         return "Size of vector of seed is lower than size of quantity to generate";
     }
 };
 
-template <typename T>
+template<typename T>
 class MersenneTwisterImplementation : public std::exception {
-public:
 
+private:
+    T minimum;
+    T maximum;
+protected:
+    bool checkIfCompatible() {
+        return std::is_same<T, uint32_t>::value || std::is_same<T, uint64_t>::value;
+    }
+
+public:
     MersenneTwisterImplementation(T minimum, T maximum) {
         if (!this->checkIfCompatible()) {
             IncompatibleException e;
@@ -105,7 +108,7 @@ public:
 
     template<class T1>
     std::vector<uint32_t> generateUint32VectorWithVectorOfSeeds(T quantity, std::vector<T1> seed) {
-        if(seed.size() < quantity) {
+        if (seed.size() < quantity) {
             SeedException e;
             throw e;
         }
@@ -119,7 +122,7 @@ public:
 
     template<class T1>
     std::vector<uint64_t> generateUint64VectorWithVectorOfSeeds(T quantity, std::vector<T1> seed) {
-        if(seed.size() < quantity) {
+        if (seed.size() < quantity) {
             SeedException e;
             throw e;
         }
@@ -128,16 +131,7 @@ public:
         for (int i = 0; i < quantity; i++) {
             vec.push_back(this->generateUint64Value(seed[i]));
         }
-
         return vec;
-    }
-
-private:
-    T minimum;
-    T maximum;
-protected:
-    bool checkIfCompatible() {
-        return std::is_same<T, uint32_t>::value || std::is_same<T, uint64_t>::value;
     }
 };
 
