@@ -2,15 +2,13 @@
 // Created by Sergey Gorlov on 25.04.2022.
 //
 #include <vector>
-#include <list>
-#include <cstdint>
 #include <math.h>
 #include <string>
+#include <filesystem>
+#include <map>
 #include "space_parting.h"
 #include "config.h"
-#include <filesystem>
-#include <random>
-#include <map>
+#include "generate_uuid.h"
 
 std::vector<int> calc_count_folder(struct space_parting_result res){
     std::vector<int> result;
@@ -25,42 +23,7 @@ std::vector<int> calc_count_folder(struct space_parting_result res){
     return result;
 }
 
-std::string generate_uuid()
-{
-    std::random_device              rd;
-    std::mt19937                    gen(rd());
-    std::uniform_int_distribution<> dis(0, 15);
-    std::uniform_int_distribution<> dis2(8, 11);
-
-    std::stringstream ss;
-    ss.clear();
-    int i;
-    ss << std::hex;
-    for (i = 0; i < 8; i++) {
-        ss << dis(gen);
-    }
-    ss << "-";
-    for (i = 0; i < 4; i++) {
-        ss << dis(gen);
-    }
-    ss << "-4";
-    for (i = 0; i < 3; i++) {
-        ss << dis(gen);
-    }
-    ss << "-";
-    ss << dis2(gen);
-    for (i = 0; i < 3; i++) {
-        ss << dis(gen);
-    }
-    ss << "-";
-    for (i = 0; i < 12; i++) {
-        ss << dis(gen);
-    };
-
-    return ss.str();
-}
-
-std::vector<std::filesystem::path> generate_path2(std::filesystem::path device_name, std::vector<int> dirs_per_level){
+std::vector<std::filesystem::path> generate_path(std::filesystem::path device_name, std::vector<int> dirs_per_level){
     std::uintmax_t last_elem = dirs_per_level.size() - 1;
     std::uintmax_t vector_size = dirs_per_level.size();
     std::uintmax_t level;

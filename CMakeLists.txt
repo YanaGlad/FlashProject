@@ -3,4 +3,4 @@ project(FlashProject)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(FlashProject main.cpp src/space_parting.cpp src/create_directories.cpp)
+add_executable(FlashProject main.cpp src/space_parting.cpp src/create_directories.cpp src/generate_uuid.cpp)
