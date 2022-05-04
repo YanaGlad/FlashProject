@@ -3,6 +3,8 @@
 //
 
 #include <filesystem>
+#include <string>
+#include <sstream>
 #include <random>
 
 std::string generate_uuid() {
@@ -11,7 +13,7 @@ std::string generate_uuid() {
     std::uniform_int_distribution<> dis(0, 15);
     std::uniform_int_distribution<> dis2(8, 11);
 
-    std::stringstream ss;
+    std::stringstream ss("");
     ss.clear();
     int i;
     ss << std::hex;
@@ -34,7 +36,7 @@ std::string generate_uuid() {
     ss << "-";
     for (i = 0; i < 12; i++) {
         ss << dis(gen);
-    };
+    }
 
     return ss.str();
 }
