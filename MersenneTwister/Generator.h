@@ -10,10 +10,6 @@
 #include <bitset>
 #include <ctime>
 
-std::ostream& operator<< (std::ostream& os, std::byte b) {
-    return os << std::bitset<8>(std::to_integer<int>(b));
-}
-
 uint64_t generate_random_seed() { // Mersenne twister. P.S it's slow. But period is 2**19937 - 1
     std::random_device device;
     std::mt19937_64 generator(device());
