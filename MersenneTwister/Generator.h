@@ -4,7 +4,6 @@
 
 #ifndef UNTITLED7_GENERATOR_H
 #define UNTITLED7_GENERATOR_H
-#define N_MAX 8 // change for max value you need(excluded from the fix task)
 #include <random>
 #include <exception>
 #include <vector>
