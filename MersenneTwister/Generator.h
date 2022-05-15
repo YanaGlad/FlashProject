@@ -4,6 +4,7 @@
 
 #ifndef UNTITLED7_GENERATOR_H
 #define UNTITLED7_GENERATOR_H
+#define N_MAX 8 // change for max value you need(excluded from the fix task)
 #include <random>
 #include <exception>
 #include <vector>
@@ -29,7 +30,7 @@ uint64_t generate_fast_random_seed(uint64_t max = UINT64_MAX) { // XORShift. P.S
     last ^= (last >> 35);
     last ^= (last << 4);
     inc += 123456789123456789L;
-    int out = (int) ((last+inc) % max);
+    int out = (int) ((last+inc) & max);
     return (out < 0) ? -out : out;
 }
 
