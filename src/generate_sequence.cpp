@@ -8,6 +8,7 @@
 #include <vector>
 #include <bitset>
 #include <ctime>
+#include <chrono>
 
 #include "generate_sequence.h"
 
