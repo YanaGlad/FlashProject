@@ -7,6 +7,6 @@
 
 #include <string>
 
-bool check_file_is_valid(std::string file_name);
+bool check_file_is_valid(std::string const& file_name, uint64_t seed);
 
 #endif //FLASHPROJECT_CHECK_FILE_H
