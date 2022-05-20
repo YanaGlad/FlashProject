@@ -7,6 +7,8 @@
 #include <sstream>
 #include <random>
 
+#include "generate_uuid.h"
+
 std::string generate_uuid() {
     std::random_device rd;
     std::mt19937 gen(rd());

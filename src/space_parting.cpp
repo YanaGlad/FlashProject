@@ -7,6 +7,8 @@
 #include <cmath>
 #include "config.h"
 
+#include "space_parting.h"
+
 struct space_parting_result {
     std::uintmax_t count_files;
     std::uintmax_t size_base; // измеряем в байтах

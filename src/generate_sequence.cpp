@@ -2,14 +2,14 @@
 // Created by Kirill Zhukov on 14.05.2022.
 //
 
-#ifndef UNTITLED7_GENERATOR_H
-#define UNTITLED7_GENERATOR_H
 #define N_MAX 8 // change for max value you need(excluded from the fix task)
 #include <random>
 #include <exception>
 #include <vector>
 #include <bitset>
 #include <ctime>
+
+#include "generate_sequence.h"
 
 uint64_t generate_random_seed() { // Mersenne twister. P.S it's slow. But period is 2**19937 - 1
     std::random_device device;
@@ -34,5 +34,3 @@ uint64_t generate_fast_random_seed(uint64_t max = UINT64_MAX) { // XORShift. P.S
 uint8_t generate_binary_sequence(uint64_t &seed) { // Converting seed(uint64_t) into uint8_t
     return (seed & 0xFF);
 }
-
-#endif //UNTITLED7_GENERATOR_H
