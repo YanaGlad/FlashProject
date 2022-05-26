@@ -9,12 +9,6 @@
 
 #include "space_parting.h"
 
-struct space_parting_result {
-    std::uintmax_t count_files;
-    std::uintmax_t size_base; // измеряем в байтах
-    std::uintmax_t size_optional;
-};
-
 std::uintmax_t calc_size_file(std::uintmax_t prev_available) {
     if (prev_available == min_file_size) return 0; // завершаем работу
 

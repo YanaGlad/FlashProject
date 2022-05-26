@@ -2,6 +2,9 @@
 // Created by Sergey Gorlov on 25.04.2022.
 //
 
+#include <cstdint>
+#include <string>
+
 #ifndef FLASHPROJECT_SPACE_PARTING_H
 #define FLASHPROJECT_SPACE_PARTING_H
 

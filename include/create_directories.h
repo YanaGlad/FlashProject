@@ -3,6 +3,8 @@
 //
 
 #include "filesystem"
+#include <vector>
+#include <string>
 
 #ifndef FLASHPROJECT_CREATE_DIRECTORIES_H
 #define FLASHPROJECT_CREATE_DIRECTORIES_H

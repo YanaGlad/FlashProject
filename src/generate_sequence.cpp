@@ -19,8 +19,8 @@ uint64_t generate_random_seed() { // Mersenne twister. P.S it's slow. But period
     return distribution(generator);
 };
 
-uint64_t generate_fast_random_seed(uint64_t max = UINT64_MAX) { // XORShift. P.S much faster than MT19937. But period is only 2**127
-    std::chrono::nanoseconds ns = duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch());
+uint64_t generate_fast_random_seed(uint64_t max) { // XORShift. P.S much faster than MT19937. But period is only 2**127
+    std::chrono::nanoseconds ns = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch());
     long last = ns.count() | 1;
     long inc = ns.count();
     last ^= (last << 21);
