@@ -25,5 +25,5 @@ bool check_file_is_valid(std::string const& file_name, uint64_t seed) {
         if (read_buff != gen_val) {result = false; break;}
     }
     
-    return true;
+    return result;
 }
