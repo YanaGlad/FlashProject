@@ -1,0 +1,31 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="400"
+        x:Class="FlashProject.MainWindow"
+        Title="FlashProject"
+		Height="400"
+		Width="700"
+		FontSize="32"
+		CanResize="False">
+	<ScrollViewer HorizontalScrollBarVisibility="Auto">
+		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Stretch" Spacing="10" Margin="20" >
+			<Label FontWeight="SemiBold" FontSize="42" Foreground="#4acaaa" HorizontalAlignment="Center" >
+				Flash Screener
+			</Label>
+			<TextBlock HorizontalAlignment="Center" FontSize="24" Margin="0,0,0,5">
+				Please, select flash drive
+			</TextBlock>
+			<ComboBox Name="FlashDrives" Width="300" HorizontalAlignment="Center">
+				<ComboBoxItem Content="Hello!" />
+			</ComboBox>
+			<Button Click="OnStartClick" HorizontalAlignment="Center" FontSize="22" FontWeight="SemiBold">
+				Start
+			</Button>
+		</StackPanel>
+	</ScrollViewer>
+	<Window.Background>
+		<ImageBrush Source="/Resources/bg.jpg"/>
+	</Window.Background>
+</Window>
