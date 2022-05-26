@@ -2,16 +2,20 @@
 // Created by Boris Gusarov on 26.05.2022.
 //
 
+#include <deque>
+#include <string>
+#include <cstring>
+
 #include "space_parting.h"
-#include "deque"
-#include "string"
 #include "create_directories.h"
 #include "file_worker.h"
 #include "config.h"
 #include "generate_sequence.h"
 
-int main() {
-    std::string start_device_name = ""; // TODO
+int main(int argc, char *argv[]) {
+    if (!(argc == 3 && (std::strcmp(argv[1],"-d") || std::strcmp(argv[1],"--device")))) return 1; 
+
+    std::string start_device_name = std::string(argv[2]);
 
     std::uintmax_t available = calc_device_space(start_device_name);
     std::deque<std::string> wrong_files = {start_device_name};
@@ -34,4 +38,11 @@ int main() {
 
     // TODO: удаление небитых файлов
     // TODO: вывод результата
+    return 0;
 }
+
+
+// TODO: pair в wrong_files 
+// TODO: замена битого файла на папку перед вычислением
+// TODO: добавить . перед именем каждого битого файла и удалять все остальные
+// TODO: добавить переменую для подсчета битого размера
