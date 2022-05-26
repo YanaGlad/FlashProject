@@ -2,7 +2,7 @@
 // Created by Sergey Gorlov on 25.04.2022.
 //
 #include <vector>
-#include <math.h>
+#include <cmath>
 #include <string>
 #include <filesystem>
 #include <map>
@@ -10,7 +10,7 @@
 #include "config.h"
 #include "generate_uuid.h"
 
-std::vector<int> calc_count_folder(struct space_parting_result res){
+std::vector<int> calc_count_folder(struct space_parting_result res) {
     std::vector<int> result;
     auto count_files = (double)res.count_files;
     if (res.size_optional != 0) {count_files++;}
@@ -23,7 +23,7 @@ std::vector<int> calc_count_folder(struct space_parting_result res){
     return result;
 }
 
-std::vector<std::filesystem::path> generate_path(std::filesystem::path device_name, std::vector<int> dirs_per_level){
+std::vector<std::filesystem::path> generate_path(std::filesystem::path device_name, std::vector<int> dirs_per_level) {
     std::uintmax_t last_elem = dirs_per_level.size() - 1;
     std::uintmax_t vector_size = dirs_per_level.size();
     std::uintmax_t level;
@@ -61,7 +61,7 @@ std::vector<std::filesystem::path> generate_path(std::filesystem::path device_na
     return paths[(int)level];
 }
 
-std::vector<std::string> create_directories(std::vector<std::filesystem::path> paths){
+std::vector<std::string> create_directories(std::vector<std::filesystem::path> paths) {
     std::vector<std::string> res;
 
     for (auto & path : paths) {

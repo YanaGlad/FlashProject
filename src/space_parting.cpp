@@ -32,7 +32,7 @@ space_parting_result calc_space(std::uintmax_t available) {
     return res;
 }
 
-space_parting_result calc_device_space(std::string device_name) {
+std::uintmax_t calc_device_space(std::string device_name) {
     std::filesystem::space_info si = std::filesystem::space(device_name);
-    return calc_space(si.available);
+    return si.available;
 }

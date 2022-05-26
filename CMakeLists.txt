@@ -9,7 +9,7 @@ add_executable(
         src/create_directories.cpp
         src/generate_uuid.cpp
         tests/tests.cpp
-)
+        src/main.cpp)
 
 add_subdirectory(lib/gtest)
 
