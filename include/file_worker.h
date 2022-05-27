@@ -3,6 +3,7 @@
 //
 
 #include "space_parting.h"
+#include "defines.h"
 #include "vector"
 #include "string"
 
@@ -14,6 +15,6 @@ void FileWorker(
         std::uintmax_t max_files_per_directory,
         std::vector<std::string> dirs,
         uint64_t origin_seed,
-        std::deque<std::string> &wrong);
+        std::deque<wrong_pair> &wrong);
 
 #endif //FLASHPROJECT_FILE_WORKER_H
