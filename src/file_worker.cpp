@@ -30,7 +30,7 @@ void check_files(const std::string& path, std::uintmax_t size, std::uintmax_t fi
     for (int j = 1; j <= files_per_directory; j++) {
         auto file_path = path + char_separator + std::to_string(j);
         if (!check_file_is_valid(file_path, seed)) {
-            auto new_file_path = path + char_separator + '.' + std::to_string(j);
+            auto new_file_path = path + char_separator + corrupted_mark + std::to_string(j);
             std::rename(file_path.c_str(), new_file_path.c_str());
 
             wrong.emplace_back(new_file_path, size);

@@ -7,5 +7,6 @@
 
 #define wrong_pair std::pair<std::string, std::uintmax_t>
 #define char_separator static_cast<char>(std::filesystem::path::preferred_separator)
+#define corrupted_mark '.'
 
 #endif //FLASHPROJECT_DEFINES_H
