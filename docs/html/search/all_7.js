@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['size_5fbase_0',['size_base',['../structspace__parting__result.html#ae1f0fb922807704397af7227df2f2dec',1,'space_parting_result']]],
-  ['size_5foptional_1',['size_optional',['../structspace__parting__result.html#a65dd4762f0258a7ae5ad610e3ad08471',1,'space_parting_result']]],
-  ['space_5fparting_2eh_2',['space_parting.h',['../space__parting_8h.html',1,'']]],
-  ['space_5fparting_5fresult_3',['space_parting_result',['../structspace__parting__result.html',1,'']]]
+  ['mainwindow_0',['MainWindow',['../classFlashProject_1_1MainWindow.html',1,'FlashProject']]],
+  ['max_5ffile_5fsize_1',['max_file_size',['../config_8h.html#a1781f3ba6c76ae1b8b9ce5ffefbd33bb',1,'config.h']]],
+  ['max_5ffiles_5fper_5fdirectory_2',['max_files_per_directory',['../config_8h.html#a97d63f594ff050b6f1ff5d49269d433a',1,'config.h']]],
+  ['min_5ffile_5fsize_3',['min_file_size',['../config_8h.html#a842e32e9de6787840e669773407f5595',1,'config.h']]]
 ];
