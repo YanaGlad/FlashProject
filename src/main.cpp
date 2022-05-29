@@ -29,14 +29,15 @@ int main(int argc, char *argv[])
     std::filesystem::create_directory(start_device_name + root_dir);
     std::filesystem::current_path(std::filesystem::path(start_device_name + root_dir));
 
-    std::deque<wrong_pair> wrong_files = {wrong_pair(root_dir + char_separator, calc_device_space(start_device_name))};
+    // std::deque<wrong_pair> wrong_files = {wrong_pair("", calc_device_space(start_device_name))};
+    std::deque<wrong_pair> wrong_files = {wrong_pair("", 1572864000)};
 
     while (!wrong_files.empty()) 
     {
         wrong_pair w = wrong_files.front();
         wrong_files.pop_front();
 
-        if (w.second == block_size) // пропускаем, если размер предыдущего разбиения равен минимальному
+        if (w.second == min_file_size) // пропускаем, если размер предыдущего разбиения равен минимальному
             continue;
 
         space_parting_result parting_res = calc_space(w.second); // следующее разбиение
