@@ -1,0 +1,33 @@
+\hypertarget{file__worker_8h}{}\doxysection{Файл include/file\+\_\+worker.h}
+\label{file__worker_8h}\index{include/file\_worker.h@{include/file\_worker.h}}
+{\ttfamily \#include \char`\"{}space\+\_\+parting.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}defines.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vector\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\char`\"{}}\newline
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{file__worker_8h_a50684788fc922e0def3efa1faf83054c}{File\+Worker}} (\mbox{\hyperlink{structspace__parting__result}{space\+\_\+parting\+\_\+result}} s, std\+::uintmax\+\_\+t \mbox{\hyperlink{config_8h_a97d63f594ff050b6f1ff5d49269d433a}{max\+\_\+files\+\_\+per\+\_\+directory}}, std\+::vector$<$ std\+::string $>$ dirs, uint64\+\_\+t origin\+\_\+seed, std\+::deque$<$ \mbox{\hyperlink{defines_8h_ac5b958cee6865f38e9c89c09cc159dd9}{wrong\+\_\+pair}} $>$ \&wrong)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{file__worker_8h_a50684788fc922e0def3efa1faf83054c}\label{file__worker_8h_a50684788fc922e0def3efa1faf83054c}} 
+\index{file\_worker.h@{file\_worker.h}!FileWorker@{FileWorker}}
+\index{FileWorker@{FileWorker}!file\_worker.h@{file\_worker.h}}
+\doxysubsubsection{\texorpdfstring{FileWorker()}{FileWorker()}}
+{\footnotesize\ttfamily void File\+Worker (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structspace__parting__result}{space\+\_\+parting\+\_\+result}}}]{s,  }\item[{std\+::uintmax\+\_\+t}]{max\+\_\+files\+\_\+per\+\_\+directory,  }\item[{std\+::vector$<$ std\+::string $>$}]{dirs,  }\item[{uint64\+\_\+t}]{origin\+\_\+seed,  }\item[{std\+::deque$<$ \mbox{\hyperlink{defines_8h_ac5b958cee6865f38e9c89c09cc159dd9}{wrong\+\_\+pair}} $>$ \&}]{wrong }\end{DoxyParamCaption})}
+
+Функция обрабоки файлов 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em s} & информация об количестве и размерах файлов \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+\_\+files\+\_\+per\+\_\+directory} & максимальное возможной кол-\/во файлов в директории \\
+\hline
+\mbox{\texttt{ in}}  & {\em dirs} & вектор с именами(путями до) папок \\
+\hline
+\mbox{\texttt{ in}}  & {\em origin\+\_\+seed} & изначальный seed, для генерации последовательностей в файлах \\
+\hline
+\mbox{\texttt{ out}}  & {\em wrong} & очередь, содержащая информацию об битых файлах \\
+\hline
+\end{DoxyParams}

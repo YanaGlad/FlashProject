@@ -10,8 +10,6 @@
 #include "space_parting.h"
 
 std::uintmax_t calc_size_file(std::uintmax_t prev_available) {
-    if (prev_available == min_file_size) return 0; // завершаем работу
-
     std::uintmax_t new_size = (std::uintmax_t)(sqrtl(prev_available / block_size)) * block_size;
 
     if (new_size > max_file_size) return max_file_size;

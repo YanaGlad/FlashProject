@@ -1,0 +1,52 @@
+\hypertarget{create__directories_8h}{}\doxysection{Файл include/create\+\_\+directories.h}
+\label{create__directories_8h}\index{include/create\_directories.h@{include/create\_directories.h}}
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{create__directories_8h_aa567f4bf1c9cde323c43d899e79f2724}{calc\+\_\+count\+\_\+folder}} (struct \mbox{\hyperlink{structspace__parting__result}{space\+\_\+parting\+\_\+result}} res)
+\item 
+std\+::vector$<$ std\+::filesystem\+::path $>$ \mbox{\hyperlink{create__directories_8h_ac2876964696d91f216a79950e54d8bb8}{generate\+\_\+path}} (std\+::filesystem\+::path device\+\_\+name, std\+::vector$<$ int $>$ dirs\+\_\+per\+\_\+level)
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{create__directories_8h_a7375c002cf3fcbf06bd0ef7c7c87b72b}{create\+\_\+directories}} (std\+::vector$<$ std\+::filesystem\+::path $>$ paths)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{create__directories_8h_aa567f4bf1c9cde323c43d899e79f2724}\label{create__directories_8h_aa567f4bf1c9cde323c43d899e79f2724}} 
+\index{create\_directories.h@{create\_directories.h}!calc\_count\_folder@{calc\_count\_folder}}
+\index{calc\_count\_folder@{calc\_count\_folder}!create\_directories.h@{create\_directories.h}}
+\doxysubsubsection{\texorpdfstring{calc\_count\_folder()}{calc\_count\_folder()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ calc\+\_\+count\+\_\+folder (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structspace__parting__result}{space\+\_\+parting\+\_\+result}}}]{res }\end{DoxyParamCaption})}
+
+Считает кол-\/во папок на каждом уровне 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em res} & данные о файлах \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{create__directories_8h_a7375c002cf3fcbf06bd0ef7c7c87b72b}\label{create__directories_8h_a7375c002cf3fcbf06bd0ef7c7c87b72b}} 
+\index{create\_directories.h@{create\_directories.h}!create\_directories@{create\_directories}}
+\index{create\_directories@{create\_directories}!create\_directories.h@{create\_directories.h}}
+\doxysubsubsection{\texorpdfstring{create\_directories()}{create\_directories()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ create\+\_\+directories (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::filesystem\+::path $>$}]{paths }\end{DoxyParamCaption})}
+
+Создает директории и возвращает пути до них 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em paths} & пути до папок \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{create__directories_8h_ac2876964696d91f216a79950e54d8bb8}\label{create__directories_8h_ac2876964696d91f216a79950e54d8bb8}} 
+\index{create\_directories.h@{create\_directories.h}!generate\_path@{generate\_path}}
+\index{generate\_path@{generate\_path}!create\_directories.h@{create\_directories.h}}
+\doxysubsubsection{\texorpdfstring{generate\_path()}{generate\_path()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::filesystem\+::path $>$ generate\+\_\+path (\begin{DoxyParamCaption}\item[{std\+::filesystem\+::path}]{device\+\_\+name,  }\item[{std\+::vector$<$ int $>$}]{dirs\+\_\+per\+\_\+level }\end{DoxyParamCaption})}
+
+Генерирует пути, для последующего создания папок 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em device\+\_\+name} & путь до устройства \\
+\hline
+\mbox{\texttt{ in}}  & {\em dirs\+\_\+per\+\_\+level} & кол-\/во папок на каждом уровне \\
+\hline
+\end{DoxyParams}

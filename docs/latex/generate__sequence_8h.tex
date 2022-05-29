@@ -1,0 +1,39 @@
+\hypertarget{generate__sequence_8h}{}\doxysection{Файл include/generate\+\_\+sequence.h}
+\label{generate__sequence_8h}\index{include/generate\_sequence.h@{include/generate\_sequence.h}}
+{\ttfamily \#include $<$cstdint$>$}\newline
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{generate__sequence_8h_a20dfa046cb6b9b319851cf7994eeaf02}{generate\+\_\+random\+\_\+seed}} ()
+\item 
+uint64\+\_\+t \mbox{\hyperlink{generate__sequence_8h_ada0419f81f553d59c3ab2d3bfe07a384}{generate\+\_\+fast\+\_\+random\+\_\+seed}} (uint64\+\_\+t max=UINT64\+\_\+\+MAX)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{generate__sequence_8h_ae956226aea40479e73ee47be714b797c}{generate\+\_\+binary\+\_\+sequence}} (uint64\+\_\+t \&seed)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{generate__sequence_8h_ae956226aea40479e73ee47be714b797c}\label{generate__sequence_8h_ae956226aea40479e73ee47be714b797c}} 
+\index{generate\_sequence.h@{generate\_sequence.h}!generate\_binary\_sequence@{generate\_binary\_sequence}}
+\index{generate\_binary\_sequence@{generate\_binary\_sequence}!generate\_sequence.h@{generate\_sequence.h}}
+\doxysubsubsection{\texorpdfstring{generate\_binary\_sequence()}{generate\_binary\_sequence()}}
+{\footnotesize\ttfamily uint8\+\_\+t generate\+\_\+binary\+\_\+sequence (\begin{DoxyParamCaption}\item[{uint64\+\_\+t \&}]{seed }\end{DoxyParamCaption})}
+
+Генерирует бинарную последовательность из переданного seed \mbox{\Hypertarget{generate__sequence_8h_ada0419f81f553d59c3ab2d3bfe07a384}\label{generate__sequence_8h_ada0419f81f553d59c3ab2d3bfe07a384}} 
+\index{generate\_sequence.h@{generate\_sequence.h}!generate\_fast\_random\_seed@{generate\_fast\_random\_seed}}
+\index{generate\_fast\_random\_seed@{generate\_fast\_random\_seed}!generate\_sequence.h@{generate\_sequence.h}}
+\doxysubsubsection{\texorpdfstring{generate\_fast\_random\_seed()}{generate\_fast\_random\_seed()}}
+{\footnotesize\ttfamily uint64\+\_\+t generate\+\_\+fast\+\_\+random\+\_\+seed (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{max = {\ttfamily UINT64\+\_\+MAX} }\end{DoxyParamCaption})}
+
+Генерирует рандомный seed (быстро) 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em max} & макс значение seed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{generate__sequence_8h_a20dfa046cb6b9b319851cf7994eeaf02}\label{generate__sequence_8h_a20dfa046cb6b9b319851cf7994eeaf02}} 
+\index{generate\_sequence.h@{generate\_sequence.h}!generate\_random\_seed@{generate\_random\_seed}}
+\index{generate\_random\_seed@{generate\_random\_seed}!generate\_sequence.h@{generate\_sequence.h}}
+\doxysubsubsection{\texorpdfstring{generate\_random\_seed()}{generate\_random\_seed()}}
+{\footnotesize\ttfamily uint64\+\_\+t generate\+\_\+random\+\_\+seed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Генерирует рандомный seed с помощью алгоритма Вихрь Мерсенна 
