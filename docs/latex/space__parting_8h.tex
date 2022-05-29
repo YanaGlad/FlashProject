@@ -1,0 +1,54 @@
+\hypertarget{space__parting_8h}{}\doxysection{Файл include/space\+\_\+parting.h}
+\label{space__parting_8h}\index{include/space\_parting.h@{include/space\_parting.h}}
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structspace__parting__result}{space\+\_\+parting\+\_\+result}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+std\+::uintmax\+\_\+t \mbox{\hyperlink{space__parting_8h_a22ae01c120a3d68ba3bc057945f0c3b0}{calc\+\_\+size\+\_\+file}} (std\+::uintmax\+\_\+t prev\+\_\+available)
+\item 
+\mbox{\hyperlink{structspace__parting__result}{space\+\_\+parting\+\_\+result}} \mbox{\hyperlink{space__parting_8h_adca55080b73f22745c36ef356db1a6c8}{calc\+\_\+space}} (std\+::uintmax\+\_\+t available)
+\item 
+std\+::uintmax\+\_\+t \mbox{\hyperlink{space__parting_8h_ab162b4de732d52eb4526aabcc07bbeca}{calc\+\_\+device\+\_\+space}} (std\+::string device\+\_\+name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{space__parting_8h_ab162b4de732d52eb4526aabcc07bbeca}\label{space__parting_8h_ab162b4de732d52eb4526aabcc07bbeca}} 
+\index{space\_parting.h@{space\_parting.h}!calc\_device\_space@{calc\_device\_space}}
+\index{calc\_device\_space@{calc\_device\_space}!space\_parting.h@{space\_parting.h}}
+\doxysubsubsection{\texorpdfstring{calc\_device\_space()}{calc\_device\_space()}}
+{\footnotesize\ttfamily std\+::uintmax\+\_\+t calc\+\_\+device\+\_\+space (\begin{DoxyParamCaption}\item[{std\+::string}]{device\+\_\+name }\end{DoxyParamCaption})}
+
+Получаем информацию о доступном месте на устройстве 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em device\+\_\+name} & путь до устройства \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{space__parting_8h_a22ae01c120a3d68ba3bc057945f0c3b0}\label{space__parting_8h_a22ae01c120a3d68ba3bc057945f0c3b0}} 
+\index{space\_parting.h@{space\_parting.h}!calc\_size\_file@{calc\_size\_file}}
+\index{calc\_size\_file@{calc\_size\_file}!space\_parting.h@{space\_parting.h}}
+\doxysubsubsection{\texorpdfstring{calc\_size\_file()}{calc\_size\_file()}}
+{\footnotesize\ttfamily std\+::uintmax\+\_\+t calc\+\_\+size\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::uintmax\+\_\+t}]{prev\+\_\+available }\end{DoxyParamCaption})}
+
+Вычисляем размер следующего измельчения (на файлы какого размера его можно разбить) 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em prev\+\_\+available} & размер предыдущего измельчения \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{space__parting_8h_adca55080b73f22745c36ef356db1a6c8}\label{space__parting_8h_adca55080b73f22745c36ef356db1a6c8}} 
+\index{space\_parting.h@{space\_parting.h}!calc\_space@{calc\_space}}
+\index{calc\_space@{calc\_space}!space\_parting.h@{space\_parting.h}}
+\doxysubsubsection{\texorpdfstring{calc\_space()}{calc\_space()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structspace__parting__result}{space\+\_\+parting\+\_\+result}} calc\+\_\+space (\begin{DoxyParamCaption}\item[{std\+::uintmax\+\_\+t}]{available }\end{DoxyParamCaption})}
+
+Получаем структуру с информацией о файлах 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em available} & размер доступного места \\
+\hline
+\end{DoxyParams}
