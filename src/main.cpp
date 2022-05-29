@@ -14,12 +14,14 @@
 #include "generate_sequence.h"
 #include "generate_uuid.h"
 #include "defines.h"
+#include "logger.h"
 
 int main(int argc, char *argv[]) 
 {
     if (!(argc == 3 && (std::strcmp(argv[1],"-d") != 0 || std::strcmp(argv[1],"--device") != 0))) return 1;
 
     std::string start_device_name = std::string(argv[2]);
+    log( " device name: " + start_device_name);
     if (start_device_name.back() != char_separator)
         start_device_name += char_separator;
 
@@ -49,12 +51,15 @@ int main(int argc, char *argv[])
         }
 
         // создание директорий, получение путей к ним
+        log(" creating directories");
         std::vector<std::string> dirs = create_directories(generate_path(w.first, calc_count_folder(parting_res)));
         // создание файлов и их проверка
+        log(" creating and checking files");
         FileWorker(parting_res, max_files_per_directory, dirs, origin_seed, wrong_files);
     }
 
     // процесс удаления целых файлов
+    log(" deleting uncorrupted files");
     std::deque<std::filesystem::path> dirs_to_check = {std::filesystem::current_path()};
     std::uintmax_t corrupted_space = 0;
 
