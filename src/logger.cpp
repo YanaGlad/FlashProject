@@ -1,10 +1,12 @@
 //
-// Created by s7440 on 29.05.2022.
+// Created by Sergey Gorlov on 29.05.2022.
 //
 #include <iostream>
 #include <ctime>
 #include <iomanip>
 #include <string>
+
+#include "logger.h"
 
 
 void log(const std::string& message){
