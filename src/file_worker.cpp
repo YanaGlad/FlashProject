@@ -58,22 +58,29 @@ void FileWorker(
         std::vector<std::string> dirs,
         uint64_t origin_seed,
         std::deque<wrong_pair> &wrong) {
-    // генерим файлы
+    // генерируем файлы
     uint64_t seed_copy = origin_seed;
-    for (int i = 0; i < dirs.size() - 1; i++) { // до последней папки
-        create_files(dirs[i], max_files_per_directory, s.size_base, seed_copy); // создание файлов и заполнение их сидом
+    for (int i = 0; i < dirs.size(); i++) {
+        create_files(
+                dirs[i],
+                std::min(max_files_per_directory, s.count_files - i * max_files_per_directory),
+                s.size_base,
+                seed_copy); // создание файлов и заполнение их сидом
     }
-    create_files(dirs[dirs.size() - 1], s.count_files % (max_files_per_directory + 1), s.size_base, seed_copy);
 
     if (s.size_optional != 0)
         create_optional(dirs[dirs.size() - 1], s.size_optional, seed_copy);
 
     // проверяем
     seed_copy = origin_seed;
-    for (int i = 0; i < dirs.size() - 1; i++) {
-        check_files(dirs[i], s.size_base, max_files_per_directory, seed_copy, wrong);
+    for (int i = 0; i < dirs.size(); i++) {
+        check_files(
+                dirs[i],
+                s.size_base,
+                std::min(max_files_per_directory, s.count_files - i * max_files_per_directory),
+                seed_copy,
+                wrong);
     }
-    check_files(dirs[dirs.size() - 1], s.size_base, s.count_files % (max_files_per_directory + 1), seed_copy, wrong);
 
     if (s.size_optional != 0)
         check_optional(dirs[dirs.size() - 1], s.size_optional, seed_copy, wrong);
