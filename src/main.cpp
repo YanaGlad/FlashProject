@@ -31,8 +31,7 @@ int main(int argc, char *argv[])
     std::filesystem::create_directory(start_device_name + root_dir);
     std::filesystem::current_path(std::filesystem::path(start_device_name + root_dir));
 
-    // std::deque<wrong_pair> wrong_files = {wrong_pair("", calc_device_space(start_device_name))};
-    std::deque<wrong_pair> wrong_files = {wrong_pair("", 1572864000)};
+    std::deque<wrong_pair> wrong_files = {wrong_pair("", calc_device_space(start_device_name))};
 
     while (!wrong_files.empty()) 
     {
