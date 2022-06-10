@@ -19,6 +19,7 @@ FlashProject.exe -d <path to device> # e.g. F:/
 - [Stikentzin](https://github.com/Skijetler) - checking files, working on the main program cycle, documentation, deleting uncorrupted files.
 - [Zhukov](https://github.com/Abuzik) - seed and binary sequence generation.
 - [Lyakishev](https://github.com/Vasillisska) - creating and processing files.
+- [Alekhine](https://github.com/alehindev) - licensing and manual testing. 
 
 
 ### Working process
