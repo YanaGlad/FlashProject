@@ -32,7 +32,8 @@ C:/alex/FlashProject/docs/html/annotated.html
 file:///home/alex/programming/Cpp/FlashProject/docs/html/annotated.html
 ```
 It will look like this:
-<img src="./images/Pasted image 20220610192110.png">
+<img src="./images/Pasted image 20220610205746.png">
+
 
 ### Contributors
 - [Gorlov](https://github.com/gxrlxv) - logging, folder tree creation, uuidv4 generation function.
