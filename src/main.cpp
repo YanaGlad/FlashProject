@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 
     std::deque<wrong_pair> wrong_files = {wrong_pair("", calc_device_space(start_device_name))};
 
-    while (!wrong_files.empty()) 
+    while (!wrong_files.empty())
     {
         wrong_pair w = wrong_files.front();
         wrong_files.pop_front();
@@ -61,18 +61,22 @@ int main(int argc, char *argv[])
     log(" deleting uncorrupted files");
     std::deque<std::filesystem::path> dirs_to_check = {std::filesystem::current_path()};
     std::uintmax_t corrupted_space = 0;
-
+    bool fl = !dirs_to_check.empty();
     while (!dirs_to_check.empty())
     {
         std::filesystem::path current_dir = dirs_to_check.front();
         dirs_to_check.pop_front();
 
-        for (const auto & entry : std::filesystem::directory_iterator(current_dir))
+        for (const auto &entry : std::filesystem::directory_iterator(current_dir))
         {
-            if (std::filesystem::is_directory(entry.path())) dirs_to_check.push_back(entry.path());
-            else {
-                if(entry.path().string().front() == corrupted_mark) corrupted_space += entry.file_size();
-                else std::filesystem::remove(entry.path());
+            if (std::filesystem::is_directory(entry.path()))
+                dirs_to_check.push_back(entry.path());
+            else
+            {
+                if (entry.path().string().front() == corrupted_mark)
+                    corrupted_space += entry.file_size();
+                else
+                    std::filesystem::remove(entry.path());
             }
         }
     }
@@ -81,6 +85,13 @@ int main(int argc, char *argv[])
     std::uintmax_t kb = corrupted_space / 1024;
     std::uintmax_t mb = kb / 1024;
     std::uintmax_t gb = mb / 1024;
-    std::cout << "Corrupted space: " << gb << " GB, " << mb % 1024 << " MB, " << kb % 1024 << " KB, " << corrupted_space % 1024 << " B";
+    if (corrupted_space == 0 && fl)
+    {
+        std::cout << "Corrupted blocks exist, but flash hides them.\n";
+    }
+    else
+    {
+        std::cout << "Corrupted space: " << gb << " GB, " << mb % 1024 << " MB, " << kb % 1024 << " KB, " << corrupted_space % 1024 << " B";
+    }
     return 0;
 }
