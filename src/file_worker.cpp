@@ -8,9 +8,11 @@
 #include "generate_sequence.h"
 #include "check_file.h"
 #include "defines.h"
+#include "logger.h"
 
 void create_files(const std::string& path, std::uintmax_t files_per_directory, std::uintmax_t size_base, uint64_t &seed) {
     for (int j = 1; j <= files_per_directory; j++) {
+        log(" create file " + std::to_string(j));
         auto file_path = path + char_separator + std::to_string(j);
         std::ofstream ofs(file_path, std::ios::binary);
         uint8_t sequence = generate_binary_sequence(seed);
@@ -30,6 +32,7 @@ void create_optional(const std::string& path, std::uintmax_t size_optional, uint
 
 void check_files(const std::string& path, std::uintmax_t size, std::uintmax_t files_per_directory, uint64_t &seed, std::deque<wrong_pair> &wrong) {
     for (int j = 1; j <= files_per_directory; j++) {
+        log(" checking file " + std::to_string(j));
         auto file_path = path + char_separator + std::to_string(j);
         if (!check_file_is_valid(file_path, seed)) {
             auto new_file_path = path + char_separator + corrupted_mark + std::to_string(j);
@@ -42,6 +45,7 @@ void check_files(const std::string& path, std::uintmax_t size, std::uintmax_t fi
 }
 
 void check_optional(const std::string& path, std::uintmax_t size, uint64_t &seed, std::deque<wrong_pair> &wrong) {
+    log(" checking optional file");
     auto file_path = path + char_separator + "optional";
 
     if (check_file_is_valid(file_path, seed)) return;
